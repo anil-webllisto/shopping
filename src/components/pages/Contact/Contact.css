@@ -1,0 +1,15 @@
+.register_from {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.from_register {
+  background: white;
+  height: 550px;
+  /* margin-top: 10%; */
+}
+
+.row {
+  margin: 0px;
+}
+.input_field {
+  max-width: 100%;
+}

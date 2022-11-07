@@ -1,0 +1,45 @@
+.slick-next {
+  right: 0px;
+  margin-left: 10%;
+}
+
+.card {
+  min-height: 550px;
+  width: 80%;
+}
+.slick-prev {
+  left: 0px;
+}
+
+.slick-dots {
+  display: none !important;
+}
+
+.card-img-tops {
+  /* width: 80%; */
+  /* min-height: 500px; */
+  padding: 5%;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: rotateY(22deg);
+}
+.slick-next:before {
+  content: '→';
+  background: black;
+  /* width: 31px; */
+}
+.slick-prev:before {
+  content: '←';
+  background-color: black;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: inherit;
+}
+
+.card-text {
+  font-size: 14px;
+  font-family: inherit;
+}

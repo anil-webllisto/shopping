@@ -64,7 +64,7 @@ function ProductPrice() {
           </div>
 
           {/* </div> */}
-          <div className='col-lg-5   p-0 m-0'>
+          <div className='col-lg-5   p-3 m-0'>
             <div className='product-price'>
               <p> {datas?.title}</p>
               <p>{datas?.price}</p>

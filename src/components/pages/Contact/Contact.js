@@ -42,7 +42,7 @@ const Contact = () => {
                       <div className='is-valid-feedback text-danger'>{errors.firstname.message} </div>
                     )}
                   </div>
-                  <div className='col-lg-6 col-md-6  mt-1 form_padding mb-1'>
+                  <div className='col-lg-6 col-md-6  form_padding mb-1'>
                     <label>Last Name </label>
                     <br />
                     <input
@@ -125,7 +125,7 @@ const Contact = () => {
                     />
                     {errors.phone && <div className='valid-feedback  text-danger'> {errors.phone.message} </div>}
                   </div>
-                  <div className='col-lg-6 col-md-6 mt-2 mb-2 '>
+                  <div className='col-lg-6 col-md-6 mt-1 mb-2 padding_zero  '>
                     <label>Gender: </label>
                     <br />
                     <label>Male </label>&nbsp;
@@ -156,7 +156,7 @@ const Contact = () => {
                 </div>
                 <div className='row '>
                   <div className='col-lg-6 col-md-6  mt-2 col-md-6form_padding'>
-                    <label> Select Language :-</label>
+                    <label> Select Language</label>
                     <br />
                     <select
                       className={classNames('form-control input-name  ', { 'is-valid': true })}
@@ -200,7 +200,7 @@ const Contact = () => {
                       cols='20'
                       minLength='10'
                       ref={register}
-                      className={classNames('form-control border  ', { 'is-valid': true })}
+                      className={classNames('form-control   ', { 'is-valid': true })}
                       {...register('address', {
                         required: 'This field is required address',
                       })}
@@ -211,17 +211,18 @@ const Contact = () => {
                   <div className='col-lg-6  mt-2 col-md-6 form_padding'>
                     <label>Select City:- </label>
                     <br />
-                    Indore:
+                    <label> Indore </label>&nbsp;
                     <input
                       type='checkbox'
                       value='indore'
-                      className='mt-4'
+                      className='mt-2 '
                       name='city'
                       {...register('checkbox', {
                         required: 'This field is required indore',
                       })}
                     />
-                    Bhopal :{' '}
+                    &nbsp;
+                    <label>Bhopal </label>&nbsp;
                     <input
                       type='checkbox'
                       value='bhopal'
@@ -230,7 +231,8 @@ const Contact = () => {
                         required: 'This field is required bhopal',
                       })}
                     />
-                    Guna :{' '}
+                    &nbsp;
+                    <label> Guna </label>&nbsp;
                     <input
                       type='checkbox'
                       value='guna'
@@ -252,16 +254,20 @@ const Contact = () => {
                       className={classNames('form-control  input-name ', { 'is-valid': true })}
                       {...register('image', {
                         required: 'This field is required image',
-                        pattern: {
-                          value: /\.(jpg|jpeg|png|gif)$/,
-                          message: 'image are invalid ',
+                        validate: {
+                          lessThan10MB: (files) => files[0]?.size < 1000000 || 'Max 10MB',
+                          acceptedFormats: (files) =>
+                            ['image/jpeg', 'image/png', 'image/gif'].includes(files[0]?.type) || 'Only PNG, JPEG e GIF',
+                          message: 'image invalid',
                         },
                       })}
                     />
-                    {errors.image && <div className='text-field  text-danger'>{errors.image.message} </div>}
+                    {errors.image && (
+                      <div className=' is-valid-feedback text-field  text-danger'>{errors.image.message} </div>
+                    )}
                   </div>
 
-                  <div className='row mt-5 btn-class col-lg-6 justify-content-center'>
+                  <div className='row mt-5 btn-class col-sm-6  col-md-6 col-lg-6 justify-content-center'>
                     <div className='col-lg-6  col-md-6  col-sm-6 form_padding '>
                       <button type='submit' value='submit'>
                         submit
@@ -278,52 +284,3 @@ const Contact = () => {
   );
 };
 export default Contact;
-//   const strongRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
-// const phonehandle = (e) => {
-//   const phones = e.target.value;
-//   var pattern = new RegExp(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i);
-//   const test = pattern.test(phones);
-//   if (!test) {
-//     setPhoneError(true);
-//   } else {
-//     setPhoneError(false);
-//   }
-//   setPhone(phones);
-// };
-// const datehandle = (e) => {
-//   const dates = e.target.value;
-//   if (dates === '') {
-//     setDateError(true);
-//   } else {
-//     setDateError(false);
-//   }
-//   setdate(dates);
-// };
-// const addresshandle = (e) => {
-//   const addresses = e.target.value;
-//   if (addresses.length < 10 || addresses.length > 50) {
-//     setAddressError(true);
-//   } else {
-//     setAddressError(false);
-//   }
-//   setAddress(address);
-// };
-// const handleFileChange = (e) => {
-//   const images = e.target.files[0];
-//   if (!images.name.match(/\.(jpg|jpeg|png|gif)$/)) {
-//     setImageError('select valid image.');
-//     return false;
-//   }
-//   if (images.size > 10000000) {
-//     setImageError('select valid image size.');
-//   }
-//   setImage(images);
-// };
-// const validation = (e) => {
-//   e.preventDefault();
-//   const user = document.getElementById('username').value;
-//   if (user === '') {
-//     document.getElementById('username').innerHTML = 'Please fill  user name field';
-//     return false;
-//   }
-// };

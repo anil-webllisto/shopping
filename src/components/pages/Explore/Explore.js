@@ -32,10 +32,10 @@ function Explore() {
       <div className='container-fluid'>
         <InfiniteScroll dataLength={dataSource.length} next={fetchMoreData} hasMore={hasMore}>
           <div className='row'>
-            {posts?.map((items) => {
+            {posts?.map((items, index) => {
               return (
                 <div className='  col-md-4'>
-                  <div class='cards'>
+                  <div class='cards' key={items.id}>
                     <img
                       className='card-img-top'
                       src={items.thumbnail}

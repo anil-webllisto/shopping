@@ -8,7 +8,7 @@ function Banner() {
       <div className='Container-fluid'>
         <div className='row'>
           <div className='col-md-12' style={{ padding: '0px' }}>
-            <img src={image1} className='images' alt='none-image' width='100%' />
+            <img src={image1} className='images' alt='none_image' width='100%' />
           </div>
         </div>
       </div>

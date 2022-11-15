@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import './header.css';
 import logo1 from '../../../images/logo.png';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 function CollapsibleExample() {
   return (
@@ -12,21 +13,25 @@ function CollapsibleExample() {
         <Navbar.Brand to='/' className='navbar-brand'>
           <img src={logo1} className='img-fluid mx-2' width='100%' height={20} alt=' ' />
         </Navbar.Brand>
+        <Nav className='d-xs-none	d-lg-none  d-md-none'>
+          <Button variant='primary'>Login</Button> &nbsp;&nbsp;&nbsp;
+          <Button className='bg-warning text-dark border-0 '>Register</Button>{' '}
+        </Nav>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav' className='navbar justify-content-center'>
           <Nav className='me-auto '>
-            <Nav.Link to='/' className='text-dark px-4 '>
+            <Link to='/' className='text-dark px-4 '>
               Home
-            </Nav.Link>
-            <Nav.Link to='/contact' className='text-dark px-4 '>
+            </Link>
+            <Link to='/contact' className='text-dark px-4 '>
               Contact
-            </Nav.Link>
-            <Nav.Link to='/explore' className='text-dark  px-4'>
+            </Link>
+            <Link to='/explore' className='text-dark  px-4'>
               Explore
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
-        <Nav>
+        <Nav className='d-none d-md-block d-lg-block'>
           <Button variant='primary'>Login</Button> &nbsp;&nbsp;&nbsp;
           <Button className='bg-warning text-dark border-0'>Register</Button>{' '}
         </Nav>

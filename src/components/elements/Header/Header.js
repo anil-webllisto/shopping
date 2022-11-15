@@ -1,41 +1,38 @@
 import React from 'react';
-import logo1 from '../../../images/logo.png';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './header.css';
+import logo1 from '../../../images/logo.png';
+import Button from 'react-bootstrap/Button';
 
-const Header = () => {
+function CollapsibleExample() {
   return (
-    <>
-      <Navbar bg='light' expand='lg'>
-        <Container fluid>
-          <div className='col-md-2 '>
-            <img src={logo1} className='img-fluid mx-2' width='100%' height={20} alt=' ' />
-          </div>
-          <Navbar.Toggle aria-controls='navbarScroll' />
-          <div className='col-md-6  justify-content-center d-flex'>
-            <Nav.Link href='/' className='px-3'>
+    <Navbar collapseOnSelect expand='md' bg='white' varient='dark' className='p-0 '>
+      <div className='container-fluid  header-bar'>
+        <Navbar.Brand to='/' className='navbar-brand'>
+          <img src={logo1} className='img-fluid mx-2' width='100%' height={20} alt=' ' />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+        <Navbar.Collapse id='responsive-navbar-nav' className='navbar justify-content-center'>
+          <Nav className='me-auto '>
+            <Nav.Link to='/' className='text-dark px-4 '>
               Home
             </Nav.Link>
-            <Nav.Link href='/contact' className='px-3'>
+            <Nav.Link to='/contact' className='text-dark px-4 '>
               Contact
             </Nav.Link>
-            <Nav.Link href='/Explore' className='px-3'>
+            <Nav.Link to='/explore' className='text-dark  px-4'>
               Explore
             </Nav.Link>
-          </div>
-          <div className='col-md-4   text-center  px-5'>
-            <button type='button' className='btn btn-primary  '>
-              Login
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button type='button' className='btn btn-primary'>
-              Register
-            </button>
-          </div>
-        </Container>
-      </Navbar>
-    </>
+          </Nav>
+        </Navbar.Collapse>
+        <Nav>
+          <Button variant='primary'>Login</Button> &nbsp;&nbsp;&nbsp;
+          <Button className='bg-warning text-dark border-0'>Register</Button>{' '}
+        </Nav>
+      </div>
+    </Navbar>
   );
-};
-export default Header;
+}
+
+export default CollapsibleExample;

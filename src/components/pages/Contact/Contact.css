@@ -3,8 +3,9 @@
 }
 .from_register {
   background: white;
-  height: 550px;
+
   /* margin-top: 10%; */
+  padding: 30px;
 }
 
 .row {
@@ -12,4 +13,14 @@
 }
 .input_field {
   max-width: 100%;
+}
+.btn-class {
+  display: inline-flex;
+
+  flex-wrap: nowrap;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid:focus {
+  background-image: none;
 }

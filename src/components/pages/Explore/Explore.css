@@ -1,11 +1,14 @@
-.explore_card_width {
-  width: 100%;
-  height: 100px;
-}
-
-.explore_card_width {
-  max-width: 100%;
-}
 .cards {
   display: grid;
+  grid-template-columns: repeat(3, lfr);
+  height: 500px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+a.btn.btn-primary.button-color {
+    background: black;
+    color: white;
+    border: none;
 }

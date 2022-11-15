@@ -29,12 +29,11 @@
 //     right: -5%;
 //     top: -5%;
 //   }
-//   &:hover .btn-delete,
-//   &:hover .btn-edit {
-//     display: block;
-//     opacity: 1;
-//   }
-// }
+&:hover .btn-delete,
+&:hover .btn-edit {
+  display: block;
+  opacity: 1;
+}
 
 // .btn {
 //   display: inline-flex;

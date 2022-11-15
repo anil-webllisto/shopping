@@ -65,9 +65,11 @@ function ProductPrice() {
 
           {/* </div> */}
           <div className='col-lg-5   p-0 m-0'>
-            <p> {datas?.title}</p>
-            <p>{datas?.price}</p>
-            <p>{datas?.description}</p>
+            <div className='product-price'>
+              <p> {datas?.title}</p>
+              <p>{datas?.price}</p>
+              <p>{datas?.description}</p>
+            </div>
           </div>
         </div>
       </div>

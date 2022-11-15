@@ -4,10 +4,11 @@ import React from 'react';
 import Home from './components/pages/Home/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './Redux/store';
 import Contact from './components/pages/Contact/Contact';
 import Explore from './components/pages/Explore/Explore';
 import ProductPrice from './components/pages/ProductPrice/ProductPrice';
+
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route exact path='/explore' component={Explore} />
             <Route exact path='/ProductPrice/:id' component={ProductPrice} />
             {/* <Route exact path="/updatePost/:id" component={UpdatePost} /> */}
+         
           </Switch>
         </div>
       </Router>

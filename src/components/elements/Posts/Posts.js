@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Posts.css';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const Posts = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 767,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -56,13 +57,13 @@ const Posts = () => {
       <Slider {...settings}>
         {posts?.map((items, index) => {
           return (
-            <div className='cards card_width' key={index}>
-              <Link to={`/ProductPrice/${items.id}`}>
+            <div className='card card_width border-0' key={index}>
+              <Link to={`/ProductPrice/${items.id}`} className='items-card border-0'>
                 <img className='card-img-tops' src={items.thumbnail} height={300} width='100%' alt='Card_image_cap' />
                 <div className='card-body'>
-                  <h5 className='card-title'> {items.title}</h5>
+                  <h5 className='card-title '> {items.title}</h5>
                   <p className='card-text'>{items.description}</p>
-                  <Link href='/' className='btn btn-primary button-color' to={`/ProductPrice/${items.id}`}>
+                  <Link className='btn btn-primary button-color' to={`/ProductPrice/${items.id}`}>
                     Go somewhere
                   </Link>
                 </div>

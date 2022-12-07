@@ -1,14 +1,12 @@
 import React from 'react';
 // import './styles/App.scss';
-
-import Home from './components/pages/Home/Home';
+import Home from './pages/Home/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './Redux/store';
-import Contact from './components/pages/Contact/Contact';
-import Explore from './components/pages/Explore/Explore';
-import ProductPrice from './components/pages/ProductPrice/ProductPrice';
-
+import store from './redux/store';
+import Contact from './pages/Contact/Contact';
+import Explore from './pages/Explore/Explore';
+import ProductPrice from './pages/ProductPrice/ProductPrice';
 
 function App() {
   return (
@@ -20,8 +18,6 @@ function App() {
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/explore' component={Explore} />
             <Route exact path='/ProductPrice/:id' component={ProductPrice} />
-            {/* <Route exact path="/updatePost/:id" component={UpdatePost} /> */}
-         
           </Switch>
         </div>
       </Router>
